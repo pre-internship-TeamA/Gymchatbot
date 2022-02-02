@@ -1,0 +1,118 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+.top{
+  position:relative;
+  width: 1440px;
+  height: 82px;
+  left: 0px;
+  top: 0px;
+
+  background: #252424;
+}
+
+.side-nav {
+  position: relative;
+  margin: 0;
+  width: 265px;
+  left: 0px;
+  top: 0px;
+  color:  white;
+  background: #252424;
+  height: 900px;
+}
+
+.main-content {
+  display: flex;
+  
+}
+
+.main {
+  width: 100%;
+  background: url(./gym.jpg) no-repeat;
+  background-size: cover;
+  opacity: 0.7;
+
+}
+
+.device {
+  position: relative;
+}
+
+.device-top {
+  position: absolute;
+  width: 25%;
+  left: 50%;
+  top: 50px;
+  transform: translate(-50%, 0);
+  border: 20px solid black;
+  border-radius: 100px 100px 0 0;
+}
+
+.chatbot {
+  position: absolute;
+  width: 25%;
+  top: 90px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: 600px;
+  border: 20px solid black;
+}
+
+.device-bottom {
+  position: absolute;
+  width: 25%;
+  border: 20px solid black;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 730px;
+  border-radius: 0 0 100px 100px;
+}
+
+.side-nav ul {
+  margin-top: 50px;
+}
+
+.side-nav ul li {
+  margin-top: 50px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.side-nav ul :hover{
+  color : red;
+}
+
+.black-nav {
+  background: #252424;
+  width: 100%;
+  display: flex;
+  color: wheat;
+  font-weight: 600;
+  font-size: 20px;
+  height: 80px;
+}
+
+.black-nav img {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.list {
+  margin-top: 30px;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #252424;
+}
+.modal {
+  margin-top: 20px;
+  padding: 20px;
+  background: #eee;
+}
