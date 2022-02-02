@@ -12,14 +12,15 @@
   text-align: center;
 }
 
-.top{
-  position:relative;
-  width: 1440px;
-  height: 82px;
-  left: 0px;
-  top: 0px;
-
+.header {
   background: #252424;
+  width: 100%;
+  display: flex;
+  color: white;
+  font-family: "cute-font";
+  font-weight: 600;
+  font-size: 40px;
+  height: 80px;
 }
 
 .side-nav {
@@ -31,6 +32,39 @@
   color:  white;
   background: #252424;
   height: 900px;
+}
+
+.side-nav ul {
+  margin-top: 150px;
+  font-family: "cute-font";
+  font-size: 40px;
+}
+
+.side-nav ul li {
+  margin: 50px auto;
+  list-style: none;
+  cursor: pointer;
+  border: 1px solid #E3FFFA;
+  border-radius: 50px;
+  background: #E3FFFA;
+  color: black;
+  width: 70%;
+}
+
+.side-nav ul li a{
+  text-decoration: none;
+  color: black;
+}
+
+.side-nav ul :hover{
+  color : red;
+}
+
+.side-nav ul .lastList{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .main-content {
@@ -56,8 +90,10 @@
   left: 50%;
   top: 50px;
   transform: translate(-50%, 0);
-  border: 20px solid black;
+  border: 20px solid #E3FFFA;
   border-radius: 100px 100px 0 0;
+  background: #E3FFFA;
+  box-sizing: border-box;
 }
 
 .chatbot {
@@ -67,49 +103,21 @@
   left: 50%;
   transform: translate(-50%, 0);
   height: 600px;
-  border: 20px solid black;
+  box-sizing: border-box;
+  border: 1px solid #E3FFFA;
 }
 
 .device-bottom {
   position: absolute;
   width: 25%;
-  border: 20px solid black;
+  border: 20px solid #E3FFFA;
   left: 50%;
   transform: translate(-50%, 0);
-  top: 730px;
+  top: 690px;
   border-radius: 0 0 100px 100px;
+  box-sizing: border-box;
 }
 
-.side-nav ul {
-  margin-top: 50px;
-  font-family: "cute-font";
-  font-size: 40px;
-}
-
-.side-nav ul li {
-  margin-top: 50px;
-  list-style: none;
-  cursor: pointer;
-}
-
-.side-nav ul li a{
-  text-decoration: none;
-  color: white;
-}
-
-.side-nav ul :hover{
-  color : red;
-}
-
-.header {
-  background: #252424;
-  width: 100%;
-  display: flex;
-  color: wheat;
-  font-weight: 600;
-  font-size: 20px;
-  height: 80px;
-}
 
 .result {
   width: 80%;
@@ -134,4 +142,8 @@
   margin: 0 0 50px 0;
   box-sizing: border-box;
   background: #282828;
+}
+
+.list {
+  padding: 30px;
 }

@@ -16,8 +16,8 @@ function Sidenav(props){
         <div className='side-nav'>
           <ul>
             <li onClick={sendCondition_device}>챗봇기능</li>
-            <li onClick={sendCondition_result}>결과목록</li>
             <li><a href={spourl}>스포짐 사이트</a></li>
+            <li className='lastList' onClick={sendCondition_result}>결과목록</li>
           </ul>
         </div>
     )
