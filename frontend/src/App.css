@@ -3,6 +3,11 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: cute-font;
+  src: url(./font/CuteFont.ttf);
+}
+
 .App {
   text-align: center;
 }
@@ -35,7 +40,7 @@
 
 .main {
   width: 100%;
-  background: url(./gym.jpg) no-repeat;
+  background: url(./images/gym.jpg) no-repeat;
   background-size: cover;
   opacity: 0.7;
 
@@ -77,6 +82,8 @@
 
 .side-nav ul {
   margin-top: 50px;
+  font-family: "cute-font";
+  font-size: 40px;
 }
 
 .side-nav ul li {
@@ -85,11 +92,16 @@
   cursor: pointer;
 }
 
+.side-nav ul li a{
+  text-decoration: none;
+  color: white;
+}
+
 .side-nav ul :hover{
   color : red;
 }
 
-.black-nav {
+.header {
   background: #252424;
   width: 100%;
   display: flex;
@@ -99,20 +111,27 @@
   height: 80px;
 }
 
-.black-nav img {
-  margin-top: 20px;
-  margin-left: 20px;
+.result {
+  width: 80%;
+  height: 600px;
+  margin: 0 auto;
+  margin-top: 100px;
+  background: #E3FFFA;
+  text-align: left;
 }
 
-.list {
-  margin-top: 30px;
-  text-align: center;
-  padding-left: 20px;
-  padding-right: 20px;
-  color: #252424;
-}
-.modal {
-  margin-top: 20px;
+.result_header {
   padding: 20px;
-  background: #eee;
+  box-sizing: border-box;
+  font-family: "cute-font";
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.result_content {
+  width: 100%;
+  height: 80%;
+  margin: 0 0 50px 0;
+  box-sizing: border-box;
+  background: #282828;
 }
