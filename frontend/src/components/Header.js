@@ -1,10 +1,10 @@
 function Header(){
-    const spogym = "images/spogym.png"
+    const spogym = "images/logo.png"
 
     return(
         <div className ="header">
-            <img src={spogym} width="300px" height="56px"></img>
-            <sapn>상담 서비스</sapn>
+            <img src={spogym}></img>
+            <p>상담 서비스</p>
         </div>
     )
 }
