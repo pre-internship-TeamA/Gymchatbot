@@ -7,8 +7,7 @@ function Result(){
             <div className='result_header'>결과 목록</div>
             <div className='result_content'>
                 <List></List>
-                <List></List>
-                <List></List>
+
             </div>
 
           </div>
