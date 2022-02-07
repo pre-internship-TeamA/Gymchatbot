@@ -34,11 +34,13 @@ function App() {
         <div className='main-content'>
           <Sidenav /*getCondition={getCondition} */></Sidenav>
           <div className="main">
+            <>
             <Routes>
               <Route path='/device' element={<Device/>} />
               <Route path='/result' element={<Result/>} />
             </Routes>
             {/* {renderCondition} */}
+            </>
           </div>
         </div>
       </div>

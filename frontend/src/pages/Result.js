@@ -9,7 +9,6 @@ function Result(){
             <div className='result_content'>
                 <List></List>
                 <List1></List1>
-
             </div>
 
           </div>
