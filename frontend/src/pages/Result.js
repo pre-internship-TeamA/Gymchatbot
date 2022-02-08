@@ -6,7 +6,7 @@ function Result(){
     return(
         <div className='result'>
             <div className='result_header'>결과 목록</div>
-            <div className='list'>
+            <div className='list_header'>
                 <ul>
                     <li>
                         <p className='name'>이름</p>

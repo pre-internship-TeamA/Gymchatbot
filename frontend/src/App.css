@@ -157,24 +157,50 @@
 }
 
 .result_content {
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
   width: 100%;
   height: 80%;
-  margin: 0 0 50px 0;
+  margin: auto 0;
   box-sizing: border-box;
   background: #9DD1C8;
 }
 
 .list {
   padding: 30px;
+  font-family: "cute-font";
 }
 
-.list ul {
+.list_header{
+  position: absolute;
+  width: 100%;
+  top: 20px;
+  padding: 0 30px;
+  box-sizing: border-box;
+  font-family: "cute-font";
+  font-size: 30px;
+}
+
+.list ul, .list_header ul {
 list-style: none;
 }
 
-.list ul li p {
+.list ul li p, .list_header ul li p {
   display: inline-block;
   width: 14%;
   box-sizing: border-box;
   text-align: center;
+  font-size: 30px;
+}
+
+.list ul li p {
+  padding: 5px;
+}
+
+.list ul li p img {
+  border: 1px solid #EBFFFB;
+  border-radius: 10px;
+  color: #9DD1C8;
+  vertical-align: middle;
 }

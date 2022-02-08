@@ -13,6 +13,7 @@ function List1(){
 
 const [counseling, setCounseling] = useState(null);
 const axios = require("axios")
+const addurl = "images/add.png"
 
 useEffect( () => {
           const url = encodeURI("/apis/esd/Gym_counseling/records");
@@ -39,7 +40,8 @@ if (!counseling) return null;
                             <p>{user.height}/{user.weight}</p>
                             <p>{user.purpose}</p>
                             <p>{user.course}</p>
-                            <p>버튼</p>
+                            <p><img src={addurl}></img></p>
+                            <hr></hr>
                         </div>
                     </li>
                 ))}
