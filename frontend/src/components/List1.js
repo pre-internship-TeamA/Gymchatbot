@@ -26,14 +26,21 @@ useEffect( () => {
           })
 }, [])
 console.log(counseling)
+if (!counseling) return null;
     return(
         <div className ="list">
-            <h3>리스트</h3>
-            <hr></hr>
             <ul>
             {counseling.map(user => (
-                    <li key={user.id}>
-                        {user.name} ({user.age})
+                    <li key={user._id}>
+                        <div>
+                            <p className='name'>{user.name}</p>
+                            <p>{user.age}</p>
+                            <p>{user.gender}</p>
+                            <p>{user.height}/{user.weight}</p>
+                            <p>{user.purpose}</p>
+                            <p>{user.course}</p>
+                            <p>버튼</p>
+                        </div>
                     </li>
                 ))}
             </ul>

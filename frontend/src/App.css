@@ -142,14 +142,18 @@
   margin-top: 100px;
   background: #E3FFFA;
   text-align: left;
+  position: relative;
+  border-radius: 20px;
 }
 
 .result_header {
-  padding: 20px;
+  position: absolute;
   box-sizing: border-box;
   font-family: "cute-font";
-  font-weight: bold;
   font-size: 30px;
+  color: #E3FFFA;
+  top: -50px;
+  left: 30px;
 }
 
 .result_content {
@@ -157,9 +161,20 @@
   height: 80%;
   margin: 0 0 50px 0;
   box-sizing: border-box;
-  background: #282828;
+  background: #9DD1C8;
 }
 
 .list {
   padding: 30px;
+}
+
+.list ul {
+list-style: none;
+}
+
+.list ul li p {
+  display: inline-block;
+  width: 14%;
+  box-sizing: border-box;
+  text-align: center;
 }

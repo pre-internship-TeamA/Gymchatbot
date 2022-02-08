@@ -17,13 +17,13 @@ function Sidenav(props){
         <div className='side-nav'>
           <ul>
             <li /*onClick={sendCondition_device}*/>
-              <NavLink to="/device" activeClassName="active">
+              <NavLink to="/device" activeclassname="active">
                  챗봇기능
                </NavLink>
             </li>
             <li><a href={spourl}>스포짐 사이트</a></li>
             <li className='lastList' /* onClick={sendCondition_result}*/>
-              <NavLink className="list" to="result" activeClassName="active">
+              <NavLink className="list" to="result" activeclassname="active">
                 결과목록
               </NavLink>
             </li>

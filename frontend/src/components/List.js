@@ -33,21 +33,42 @@ function List(){
    useEffect( () => {
     const fetchUsers = async () => {
         try {
-            setError(null);
-            setUsers(null);
-            setLoading(true);
-            const response = await axios.get(
-                'https://jsonplaceholder.typicode.com/users' 
-             );
-            setUsers(response.data);
-            console.log(response)
-        } catch (e) {
+          setError(null);
+          setUsers(null);
+          setLoading(true);
+       const url = encodeURI("/apis/esd/Gym_counseling/records");
+       const headers = {
+        "coginsight-api-key" : `roebQelczjsdRVqwtKG6ezTZInQfBeUnrREDoy7dTrGbvwkYxJzgmVMMw6q7p83fjsCZ3cuIVbuwFcNoyhpjEQ==|pt0f0hklgSYGCL0dhmtpzF5ngvh3QPcVNDUhqGXJ1D0=` ,
+        "coginsight-domain-id" : `4f33c78d-678b-4f8d-a62c-54f54061139c`
+       } 
+       axios.get(url,{headers}).then((response) =>{
+        setUsers(response.data.result)
+       }) } catch (e) {
             setError(e);
+          }
+          setLoading(false);
         }
-        setLoading(false);
-    }
-    fetchUsers()
-},[])
+        fetchUsers()
+    }, [])
+
+//    useEffect( () => {
+//     const fetchUsers = async () => {
+//         try {
+//             setError(null);
+//             setUsers(null);
+//             setLoading(true);
+//             const response = await axios.get(
+//                 'https://jsonplaceholder.typicode.com/users' 
+//              );
+//             setUsers(response.data);
+//             console.log(response)
+//         } catch (e) {
+//             setError(e);
+//         }
+//         setLoading(false);
+//     }
+//     fetchUsers()
+// },[])
 
 
    
@@ -73,7 +94,7 @@ console.log(users)
             <hr></hr>
             <ul>
                 {users.map(user => (
-                    <li key={user.id}>
+                    <li key={user._id}>
                         {user.username} ({user.name})
                         
                     </li>
