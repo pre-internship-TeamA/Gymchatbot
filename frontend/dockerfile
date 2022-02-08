@@ -1,0 +1,57 @@
+# # Pull latest official node image
+# FROM node:latest
+
+# # Expose ports
+# EXPOSE 3000
+# EXPOSE 35729
+
+# # Set working directory
+# WORKDIR /app
+
+# # Add /app/node_modules/.bin to environment variables
+# ENV PATH /app/node_modules/.bin:$PATH
+
+# # Copy package files and install app dependencies
+# COPY package.json /app/package.json
+# COPY package-lock.json /app/package-lock.json
+# RUN npm install
+# RUN npm install react-scripts -g
+# RUN npm i axios
+
+# # Add React app to working directory
+# ADD . /app
+
+# # Start the React app
+# CMD ["npm", "start"]
+
+
+# Create image based on node image
+FROM node:latest as build
+
+# Set working directory
+WORKDIR /app
+ADD . /app
+
+# Add /app/node_modules/.bin to environment variables
+ENV PATH /app/node_modules/.bin:$PATH
+
+# Install all app dependencies
+COPY package.json /app/package.json
+RUN npm install
+RUN npm install react-scripts -g
+RUN npm install axios
+
+# Build the app
+RUN npm run build
+
+# Create image based on nginx and deploy our built React app
+FROM nginx:1.17-alpine
+
+COPY --from=build /app/build /usr/share/nginx/html
+
+RUN rm /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
