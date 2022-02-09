@@ -16,7 +16,8 @@ COPY package.json /app/package.json
 COPY package-lock.json /app/package-lock.json
 RUN npm install
 RUN npm install react-scripts -g
-RUN npm i axios
+RUN npm install axios
+RUN npm install react-router-dom
 
 # Add React app to working directory
 ADD . /app
