@@ -17,17 +17,15 @@ services:
             - frontend
 
     mongodb:
-        image: mongo
+        image: mongo:latest
         container_name: mongo
-        restart: unless-stopped
-        command: mongod --auth
+        hostname: test_mongodb
         environment:
-            MONGO_INITDB_ROOT_USERNAME: "admin"
-            MONGO_INITDB_ROOT_PASSWORD: "password"
-            MONGO_INITDB_DATABASE: webapp
-            MONGODB_DATA_DIR: /data/db
+            - MONGO_INITDB_DATABASE=animal_db
+            - MONGO_INITDB_ROOT_USERNAME=root
+            - MONGO_INITDB_ROOT_PASSWORD=pass
         volumes:
-        - mongodbdata:/data/db
+        - ./init-db.js:/docker-entrypoint-initdb.d/init-db.js:ro
         networks:
         - backend
 
@@ -39,9 +37,9 @@ services:
         ports:
             - "5000:5000"
         environment:
-            MONGODB_HOST: mongodb
-            MONGODB_USERNAME: "apiuser"
-            MONGODB_PASSWORD: "apipassword"
+            - MONGO_INITDB_DATABASE=animal_db
+            - MONGO_INITDB_ROOT_USERNAME=root
+            - MONGO_INITDB_ROOT_PASSWORD=pass
         volumes:
             - appdata:/var/www/
         depends_on: 

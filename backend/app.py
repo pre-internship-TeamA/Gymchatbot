@@ -1,35 +1,28 @@
-import datetime
-import os
- 
-from flask import Flask, Response, request
-from flask_mongoengine import MongoEngine
+from flask import Flask, jsonify
+import pymongo
+from pymongo import MongoClient
 
 app = Flask(__name__)
-app.config['MONGODB_SETTINGS'] = {
-    'host': os.environ['MONGODB_HOST'],
-    'username': os.environ['MONGODB_USERNAME'],
-    'password': os.environ['MONGODB_PASSWORD'],
-    'db': 'webapp'
-}
 
-db = MongoEngine()
-db.init_app(app)
+def get_db():
+    client = MongoClient(host='test_mongodb',
+                         port=27017, 
+                         username='root', 
+                         password='pass',
+                        authSource="admin")
+    db = client["animal_db"]
+    return db
 
-class Todo(db.Document):
-    title = db.StringField(max_length=60)
-    text = db.StringField()
-    done = db.BooleanField(default=False)
-    pub_date = db.DateTimeField(default=datetime.datetime.now)
+@app.route('/')
+def ping_server():
+    return "Welcome to the world of animals."
 
-@app.route("/api")
-def index():
-    Todo.objects().delete()
-    Todo(title="Simple todo A", text="12345678910").save()
-    Todo(title="Simple todo B", text="12345678910").save()
-    Todo(title="ccccc수정", text="수정내용").save()
-    Todo.objects(title__contains="B").update(set__text="Hello world")
-    todos = Todo.objects().to_json()
-    return Response(todos, mimetype="application/json", status=200)
+@app.route('/animals')
+def get_stored_animals():
+    db = get_db()
+    _animals = db.animal_tb.find()
+    animals = [{"id": animal["id"], "name": animal["name"], "type": animal["type"]} for animal in _animals]
+    return jsonify({"animals": animals})
 
-if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+if __name__=='__main__':
+    app.run(host="0.0.0.0", port=5000)
