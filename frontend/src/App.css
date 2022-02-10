@@ -170,6 +170,7 @@
 .list {
   padding: 30px;
   font-family: "cute-font";
+
 }
 
 .list_header{
@@ -184,6 +185,7 @@
 
 .list ul, .list_header ul {
 list-style: none;
+
 }
 
 .list ul li p, .list_header ul li p {
@@ -192,6 +194,8 @@ list-style: none;
   box-sizing: border-box;
   text-align: center;
   font-size: 30px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .list ul li p {
@@ -206,7 +210,7 @@ list-style: none;
 }
 
 .details {
-  width: 60%;
+  width: 40%;
   height: 400px;
   margin: 0 auto;
   margin-top: 200px;
@@ -231,4 +235,11 @@ list-style: none;
 .last_list a {
   text-decoration: none;
   color: black;
+}
+
+.detail_logo2 {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 500px;
 }

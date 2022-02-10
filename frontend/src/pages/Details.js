@@ -1,12 +1,15 @@
 import { useLocation } from 'react-router-dom';
 import {Link} from 'react-router-dom'
 
+
+
 function Details(){
 
     const data = useLocation();
-
+    const logo2 = "images/logo2.png"
  
     return(
+        <>
         <div className='details'>
             <div className='result_header'>상세 결과</div>
             <div className='list_content'>
@@ -24,11 +27,11 @@ function Details(){
                     목록으로
                     </Link>
                 </div>
-
             </div>
-
-                
+            <img className="detail_logo2" src={logo2}></img>
         </div>
+        
+        </>
     )
 
 }

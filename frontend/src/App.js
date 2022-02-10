@@ -38,7 +38,7 @@ function App() {
             <Routes>
               <Route path='/device' element={<Device/>} />
               <Route path='/result' element={<Result/>} />
-              <Route path='/result/detail' element={<Details/>} />
+              <Route path='/detail' element={<Details/>} />
             </Routes>
             {/* {renderCondition} */}
             </>

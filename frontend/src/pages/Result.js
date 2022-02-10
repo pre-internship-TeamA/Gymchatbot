@@ -1,7 +1,40 @@
 import List from '../components/List'
 import List1 from '../components/List1';
+import { useState, useEffect } from 'react';
+import Pagination from '../components/Pagination';
+
+
 
 function Result(){
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage, setPostsPerPage] = useState(7);
+    const [counseling, setCounseling] = useState(null);
+
+    const indexOfLast = currentPage * postsPerPage;
+    const indexOfFirst = indexOfLast - postsPerPage;
+
+    function currentPosts(tmp) {
+        let currentPosts = 0;
+        currentPosts = tmp.slice(indexOfFirst, indexOfLast);
+        return currentPosts;
+    }
+
+
+    const axios = require("axios")
+    useEffect( () => {
+            const url = encodeURI("/apis/esd/Gym_counseling/records");
+            const headers = {
+            "coginsight-api-key" : `roebQelczjsdRVqwtKG6ezTZInQfBeUnrREDoy7dTrGbvwkYxJzgmVMMw6q7p83fjsCZ3cuIVbuwFcNoyhpjEQ==|pt0f0hklgSYGCL0dhmtpzF5ngvh3QPcVNDUhqGXJ1D0=` ,
+            "coginsight-domain-id" : `4f33c78d-678b-4f8d-a62c-54f54061139c`
+            } 
+            axios.get(url,{headers}).then((response) =>{
+                setCounseling(response.data.result)
+                
+            })
+    }, [])
+    console.log(counseling)
+    if (!counseling) return null;
 
     return(
         <div className='result'>
@@ -20,7 +53,9 @@ function Result(){
             </div>
             <div className='result_content'>
                 {/* <List></List> */}
-                <List1></List1>
+                <List1 counseling={currentPosts(counseling)}></List1>
+                <Pagination postsPerPage={postsPerPage} totalPosts={counseling.length} paginate={setCurrentPage}></Pagination>
+                
             </div>
 
           </div>
