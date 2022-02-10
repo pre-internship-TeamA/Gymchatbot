@@ -1,15 +1,18 @@
 from flask import Flask, jsonify
-import pymongo
+import os
 from pymongo import MongoClient
 
 app = Flask(__name__)
+MONGO_HOST = 'mongodb'
+MONGO_PORT = 27017
+MONGO_USER = 'root'
+MONGO_PASS = 'pass'
+MONGO_URI = 'mongodb://{}:{}@{}:{}/{}?authSource={}'.format(
+    MONGO_USER, MONGO_PASS, MONGO_HOST, MONGO_PORT, 'animal_db', 'admin')
+
 
 def get_db():
-    client = MongoClient(host='test_mongodb',
-                         port=27017, 
-                         username='root', 
-                         password='pass',
-                        authSource="admin")
+    client = MongoClient(MONGO_URI)
     db = client["animal_db"]
     return db
 
@@ -25,4 +28,4 @@ def get_stored_animals():
     return jsonify({"animals": animals})
 
 if __name__=='__main__':
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5000, debug=True)
