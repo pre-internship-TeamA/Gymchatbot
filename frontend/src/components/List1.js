@@ -1,5 +1,5 @@
-
 import { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom'
 import App from '../App';
 
 function List1(){
@@ -40,7 +40,21 @@ if (!counseling) return null;
                             <p>{user.height}/{user.weight}</p>
                             <p>{user.purpose}</p>
                             <p>{user.course}</p>
-                            <p><img src={addurl}></img></p>
+                            <p>
+                                <Link to ="/result/detail"
+                                 state={{
+                                     name : user.name,
+                                     age : user.age,
+                                     gender : user.gender,
+                                     height : user.height,
+                                     weight : user.weight,
+                                     purpose : user.purpose,
+                                     course : user.course,
+                                     style : user.style
+                                 }}>
+                                    <img src={addurl}></img>
+                                </Link>
+                            </p>
                             <hr></hr>
                         </div>
                     </li>

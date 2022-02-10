@@ -23,7 +23,7 @@ function Sidenav(props){
             </li>
             <li><a href={spourl}>스포짐 사이트</a></li>
             <li className='lastList' /* onClick={sendCondition_result}*/>
-              <NavLink className="list" to="result" activeclassname="active">
+              <NavLink className="list" to="/result" activeclassname="active">
                 결과목록
               </NavLink>
             </li>

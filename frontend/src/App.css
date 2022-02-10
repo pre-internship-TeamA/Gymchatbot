@@ -204,3 +204,31 @@ list-style: none;
   color: #9DD1C8;
   vertical-align: middle;
 }
+
+.details {
+  width: 60%;
+  height: 400px;
+  margin: 0 auto;
+  margin-top: 200px;
+  background: #E3FFFA;
+  text-align: left;
+  position: relative;
+  border-radius: 20px;
+}
+
+.list_content div{
+  padding: 20px;
+  font-family: "cute-font";
+  font-size: 30px;
+}
+
+.last_list {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+.last_list a {
+  text-decoration: none;
+  color: black;
+}

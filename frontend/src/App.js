@@ -10,6 +10,7 @@ import Header from './components/Header';
 import Sidenav from './components/Sidenav';
 import Device from './pages/Device';
 import Result from './pages/Result';
+import Details from './pages/Details';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
             <Routes>
               <Route path='/device' element={<Device/>} />
               <Route path='/result' element={<Result/>} />
+              <Route path='/result/detail' element={<Details/>} />
             </Routes>
             {/* {renderCondition} */}
             </>
