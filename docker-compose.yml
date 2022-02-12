@@ -13,6 +13,8 @@ services:
         volumes: 
             - ./frontend:/app
             - /app/node_modules
+        #networks:
+        #    - frontend
 
     mongodb:
         image: mongo:latest

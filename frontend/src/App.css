@@ -168,8 +168,9 @@
 }
 
 .list {
-  padding: 30px;
+  padding: 5px 30px;
   font-family: "cute-font";
+  box-sizing: border-box;
 
 }
 
@@ -242,4 +243,42 @@ list-style: none;
   left: 50%;
   transform: translate(-50%, 0);
   top: 500px;
+}
+
+.pagination {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+}
+
+.pagination li {
+  list-style: none;
+  margin: 10px 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.pagination li span {
+  font-family: "cute-font";
+  font-size: 30px;
+}
+
+.explain {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.exercise_box {
+  background-color: white;
+  width: 29%;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 5% 2% 0% 2%;
+  height: 300px;
+  border: 5px solid #E3FFFA;
+  border-radius: 20px;
 }
