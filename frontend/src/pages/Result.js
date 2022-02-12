@@ -54,11 +54,9 @@ function Result(){
             <div className='result_content'>
                 {/* <List></List> */}
                 <List1 counseling={currentPosts(counseling)}></List1>
-                <Pagination postsPerPage={postsPerPage} totalPosts={counseling.length} paginate={setCurrentPage}></Pagination>
-                
             </div>
-
-          </div>
+            <Pagination postsPerPage={postsPerPage} totalPosts={counseling.length} paginate={setCurrentPage}></Pagination>
+        </div>
     )
 }
 export default Result;

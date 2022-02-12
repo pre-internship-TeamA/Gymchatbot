@@ -168,8 +168,9 @@
 }
 
 .list {
-  padding: 30px;
+  padding: 5px 30px;
   font-family: "cute-font";
+  box-sizing: border-box;
 
 }
 
@@ -242,4 +243,30 @@ list-style: none;
   left: 50%;
   transform: translate(-50%, 0);
   top: 500px;
+}
+
+.pagination {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+}
+
+.pagination li {
+  list-style: none;
+  margin: 10px 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.pagination li span {
+  font-family: "cute-font";
+  font-size: 30px;
+}
+
+.explain {
+  background-color: #9DD1C8;
+  width: 80%;
+  height: 200px;
 }

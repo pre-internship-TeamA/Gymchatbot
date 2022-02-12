@@ -5,19 +5,15 @@ function Pagination({ postsPerPage, totalPosts, paginate }){
         pageNumbers.push(i);
     }
     return (
-        <div>
-        <nav>
             <div className="pagination">
             {pageNumbers.map((number) => (
-                <li key={number} className="page-item">
-                <span onClick={() => paginate(number)} className="page-link">
-                    {number}
+                <li key={number} className="page-item" onClick={() => paginate(number)}>
+                <span  className="page-link">
+                &lt; {number} &gt;
                 </span>
                 </li>
             ))}
             </div>
-        </nav>
-        </div>
     );
 };
 

@@ -11,6 +11,7 @@ import Sidenav from './components/Sidenav';
 import Device from './pages/Device';
 import Result from './pages/Result';
 import Details from './pages/Details';
+import Explain from './pages/Explain';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
               <Route path='/device' element={<Device/>} />
               <Route path='/result' element={<Result/>} />
               <Route path='/detail' element={<Details/>} />
+              <Route path='/explain' element={<Explain/>} />
             </Routes>
             {/* {renderCondition} */}
             </>
