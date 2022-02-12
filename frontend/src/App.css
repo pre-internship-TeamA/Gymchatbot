@@ -266,7 +266,19 @@ list-style: none;
 }
 
 .explain {
-  background-color: #9DD1C8;
-  width: 80%;
-  height: 200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.exercise_box {
+  background-color: white;
+  width: 29%;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 5% 2% 0% 2%;
+  height: 300px;
+  border: 5px solid #E3FFFA;
+  border-radius: 20px;
 }
