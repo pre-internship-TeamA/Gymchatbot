@@ -7,20 +7,26 @@ from bs4 import BeautifulSoup
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
-MONGO_HOST = 'mongodb'
-MONGO_PORT = 27017
-MONGO_USER = 'root'
-MONGO_PASS = 'pass'
-MONGO_URI = 'mongodb://{}:{}@{}:{}/{}?authSource={}'.format(
-    MONGO_USER, MONGO_PASS, MONGO_HOST, MONGO_PORT, 'animal_db', 'admin')
+# MONGO_HOST = 'mongodb'
+# MONGO_PORT = 27017
+# MONGO_USER = 'root'
+# MONGO_PASS = 'pass'
+# MONGO_URI = 'mongodb://{}:{}@{}:{}/{}?authSource={}'.format(
+#     MONGO_USER, MONGO_PASS, MONGO_HOST, MONGO_PORT, 'animal_db', 'admin')
 
+# client = MongoClient(MONGO_URI)
+# db = client["animal_db"]
+# db.animal_tb.drop()
 
+client1 = MongoClient("mongodb+srv://gym123:gym123@cluster0.wfwbi.mongodb.net/gymdb?retryWrites=true&w=majority")
+db1 = client1.gymdb
+db1.gymtb.drop()
 
 
 
 # 타겟 URL을 읽어서 HTML를 받아오고
-headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
-data = requests.get('http://www.spogym.co.kr/default/sub3/sub31.php',headers=headers)
+# headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+data = requests.get('http://www.spogym.co.kr/default/sub3/sub31.php')
 
 # HTML을 BeautifulSoup이라는 라이브러리를 활용해 검색하기 용이한 상태로 만듦
 # soup이라는 변수에 "파싱 용이해진 html"이 담긴 상태가 됨
@@ -31,20 +37,12 @@ soup = BeautifulSoup(data.content.decode('euc-kr' , 'replace'), 'html.parser')
 training1 = soup.select('#content > div:nth-child(6) > div > div.col-md-8.col-sm-6.col-xs-12.right_conts > h3')
 training2 = soup.select('#content > div:nth-child(6) > div:nth-child(6) > div.col-md-8.col-sm-6.col-xs-12.right_conts > div > font')
 
-client = MongoClient(MONGO_URI)
-db = client["animal_db"]
-db.animal_tb.drop()
-
-client1 = MongoClient("mongodb+srv://gym123:gym123@cluster0.wfwbi.mongodb.net/gymdb?retryWrites=true&w=majority")
-db1 = client1.gymdb
-
-
 for training in training1:
     if training is not None:
         print(training.text)
         name = training.text
         doc = {'name': name}
-        db.animal_tb.insert_one(doc)
+        db1.gymtb.insert_one(doc)
 
         
 # for training in training2:
@@ -54,17 +52,17 @@ for training in training1:
 #         doc = {'detail': detail}
 #         db.animal_tb.insert_one(doc)
 
-@app.route('/')
+@app.route('/gym')
 def ping_server():
     abc = db1.gymtb.find()
     aaa = [{"name" : a["name"]} for a in abc]
     return jsonify({"name": aaa})
 
-@app.route('/animals')
-def get_stored_animals():
-    _animals = db.animal_tb.find()
-    animals = [{"name" : animal["name"]} for animal in _animals]
-    return jsonify({"animals": animals})
+# @app.route('/animals')
+# def get_stored_animals():
+#     _animals = db.animal_tb.find()
+#     animals = [{"name" : animal["name"]} for animal in _animals]
+#     return jsonify({"animals": animals})
 
 if __name__=='__main__':
     app.run(host="0.0.0.0", port=5000, debug=True)
