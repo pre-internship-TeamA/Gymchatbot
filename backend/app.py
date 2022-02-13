@@ -35,6 +35,10 @@ client = MongoClient(MONGO_URI)
 db = client["animal_db"]
 db.animal_tb.drop()
 
+client1 = MongoClient("mongodb+srv://gym123:gym123@cluster0.wfwbi.mongodb.net/gymdb?retryWrites=true&w=majority")
+db1 = client1.gymdb
+
+
 for training in training1:
     if training is not None:
         print(training.text)
@@ -50,16 +54,11 @@ for training in training1:
 #         doc = {'detail': detail}
 #         db.animal_tb.insert_one(doc)
 
-
-
-
-
-
-
-
 @app.route('/')
 def ping_server():
-    return "Welcome to the world of animals."
+    abc = db1.gymtb.find()
+    aaa = [{"name" : a["name"]} for a in abc]
+    return jsonify({"name": aaa})
 
 @app.route('/animals')
 def get_stored_animals():
