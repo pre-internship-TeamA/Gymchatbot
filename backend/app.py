@@ -56,9 +56,7 @@ for training in training1:
 
 @app.route('/')
 def ping_server():
-    abc = db1.gymtb.find()
-    aaa = [{"name" : a["name"]} for a in abc]
-    return jsonify({"name": aaa})
+    return "!!!"
 
 @app.route('/animals')
 def get_stored_animals():
