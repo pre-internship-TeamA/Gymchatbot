@@ -90,18 +90,12 @@ services:
         command: gunicorn --bind 0.0.0.0:5000 app:app --reload
         ports:
             - "5000:5000"
-        environment:
-            - MONGO_HOST=mongodb
-            - MONGO_PORT=27017
-            - MONGO_USER=root
-            - MONGO_PASS=pass
-            - MONGO_DATABASE=animal_db
+
         volumes:
             - appdata:/var/www/
             - ./backend:/app
-        depends_on: 
-            - mongodb
+
 
 volumes:
-    mongodb_data:
+    
     appdata:
