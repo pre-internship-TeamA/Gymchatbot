@@ -8,3 +8,16 @@ scrape_configs:
   - job_name: 'cadvisor'
     static_configs:
       - targets: ['cadvisor:8080']
+
+  - job_name: 'frontend'
+    static_configs:
+      - targets: ['frontend:3000']
+
+  - job_name: 'backend'
+    static_configs:
+      - targets: ['backend:5000']
+
+  - job_name: 'node-exporter'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['node-exporter:9100']
