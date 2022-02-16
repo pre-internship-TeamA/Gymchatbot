@@ -1,0 +1,17 @@
+{
+	"ulid": "01FW0VRXV8CNNBCE68X97H1590",
+	"minTime": 1644720769233,
+	"maxTime": 1644724800000,
+	"stats": {
+		"numSamples": 1223380,
+		"numSeries": 1516,
+		"numChunks": 9096
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01FW0VRXV8CNNBCE68X97H1590"
+		]
+	},
+	"version": 1
+}
