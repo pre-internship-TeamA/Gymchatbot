@@ -44,7 +44,11 @@ soup = BeautifulSoup(data.content.decode('utf-8' , 'replace'), 'html.parser')
         
 #-------------------------------------------------------------------------------
 
+<<<<<<< Updated upstream
 @app.route('/api',methods=["GET","POST"])
+=======
+@app.route('/',methods=["GET","POST"])
+>>>>>>> Stashed changes
 def getpost():
     if request.method == "GET":
         o =[]
@@ -58,6 +62,7 @@ def ping_server():
     aaa = [a["sub"]+" "+a["detail"]  for a in abc]
     return jsonify({"sub" : aaa})
 
+<<<<<<< Updated upstream
 
 
 # @app.route('/animals')
@@ -66,5 +71,7 @@ def ping_server():
 #     animals = [{"name" : animal["name"]} for animal in _animals]
 #     return jsonify({"animals": animals})
 
+=======
+>>>>>>> Stashed changes
 if __name__=='__main__':
     app.run(host="0.0.0.0", port=5000, debug=True)

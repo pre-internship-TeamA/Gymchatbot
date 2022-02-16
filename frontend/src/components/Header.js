@@ -4,7 +4,7 @@ function Header(){
     return(
         <div className ="header">
             <img src={spogym}></img>
-            <p>상담 서비스</p>
+            <p>사아앙담 서비스</p>
         </div>
     )
 }
