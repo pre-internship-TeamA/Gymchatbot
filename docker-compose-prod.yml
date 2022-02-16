@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
 
-    client:
+    frontend:
         build:
             context: ./frontend
             dockerfile: dockerfile
@@ -16,40 +16,30 @@ services:
             - ./frontend/node_modules/:/frontend/node_modules
         tty: true
 
-    mongodb:
-        image: mongo
-        container_name: mongo
-        restart: unless-stopped
-        command: mongod --auth
-        environment:
-            MONGO_INITDB_ROOT_USERNAME: "admin"
-            MONGO_INITDB_ROOT_PASSWORD: "password"
-            MONGO_INITDB_DATABASE: webapp
-            MONGODB_DATA_DIR: /data/db
-        volumes:
-        - mongodbdata:/data/db
-        networks:
-        - backend
+    # mongodb:
+    #     image: mongo
+    #     container_name: mongo
+    #     restart: unless-stopped
+    #     command: mongod --auth
+    #     environment:
+    #         MONGO_INITDB_ROOT_USERNAME: "admin"
+    #         MONGO_INITDB_ROOT_PASSWORD: "password"
+    #         MONGO_INITDB_DATABASE: webapp
+    #         MONGODB_DATA_DIR: /data/db
+    #     volumes:
+    #     - mongodbdata:/data/db
+    #     networks:
+    #     - backend
 
-    api:
+    backend:
         build: 
             context: ./backend
             dockerfile: Dockerfile
         command: gunicorn --bind 0.0.0.0:5000 app:app
         ports:
             - "5000:5000"
-        environment:
-            MONGODB_HOST: mongodb
-            MONGODB_USERNAME: "apiuser"
-            MONGODB_PASSWORD: "apipassword"
         volumes:
             - appdata:/var/www/
-<<<<<<< Updated upstream
-        depends_on: 
-            - mongodb
-        networks:
-            - frontend
-=======
             - ./backend:/app
     nginx:
         build: ./nginx
@@ -58,7 +48,6 @@ services:
         volumes:
             - build_folder:/var/www/frontend
         depends_on:
->>>>>>> Stashed changes
             - backend
             - frontend
 
