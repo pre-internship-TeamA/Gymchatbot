@@ -2,8 +2,6 @@ version: '3.7'
 
 services:
 
-<<<<<<< Updated upstream
-=======
     # prometheus:
     #     image: prom/prometheus:latest
     #     volumes:
@@ -77,7 +75,6 @@ services:
     #         restart_policy:
     #             condition: on-failure 
 
->>>>>>> Stashed changes
     frontend:
         build:
             context: ./frontend
@@ -90,20 +87,6 @@ services:
         networks:
             - frontend
 
-    # mongodb:
-    #     image: mongo
-    #     container_name: mongo
-    #     restart: unless-stopped
-    #     command: mongod --auth
-    #     environment:
-    #         MONGO_INITDB_ROOT_USERNAME: "admin"
-    #         MONGO_INITDB_ROOT_PASSWORD: "password"
-    #         MONGO_INITDB_DATABASE: webapp
-    #         MONGODB_DATA_DIR: /data/db
-    #     volumes:
-    #     - mongodbdata:/data/db
-    #     networks:
-    #     - backend
 
     backend:
         build: 
