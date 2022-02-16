@@ -17,26 +17,12 @@ services:
             - 9090:9090
         links:
             - cadvisor:cadvisor
-            - alertmanager:alertmanager
         depends_on:
             - cadvisor
         # networks:
         #     - app-tier
         restart: on-failure 
     
-    cadvisor:
-        image: google/cadvisor
-        volumes:
-            - /:/rootfs:ro
-            - /var/run:/var/run:rw
-            - /sys:/sys:ro
-            - /var/lib/docker/:/var/lib/docker:ro
-        ports:
-            - 8080:8080
-        # networks:
-        #     - app-tier
-        restart: on-failure 
-        privileged: true
 
     grafana:
         image: grafana/grafana
@@ -44,7 +30,7 @@ services:
         depends_on:
             - prometheus
         ports:
-            - 3002:3000
+            - 3003:3003
         volumes:
             - ./grafana/data:/var/lib/grafana
             - ./grafana/provisioning/:/etc/grafana/provisioning/
@@ -52,7 +38,6 @@ services:
         #     - ./grafana/config.monitoring
         # networks:
         #     - app-tier
-        #     - grafana-tier
         restart: always
 
     node-exporter:
@@ -75,6 +60,23 @@ services:
             mode: global
         privileged: true
 
+    cadvisor:
+        image: google/cadvisor
+        volumes:
+            - /:/rootfs:ro
+            - /var/run:/var/run:rw
+            - /sys:/sys:ro
+            - /var/lib/docker/:/var/lib/docker:ro
+        ports:
+            - 8081:8080
+        # networks:
+        #     - app-tier
+        restart: always
+        deploy:
+            mode: global
+            restart_policy:
+                condition: on-failure 
+
 
     frontend:
         build:
@@ -86,8 +88,8 @@ services:
         volumes: 
             - ./frontend:/app
             - /app/node_modules
-        #networks:
-        #    - frontend
+        # networks:
+        #    - app-tier
 
     # mongodb:
     #     image: mongo:latest
@@ -107,12 +109,16 @@ services:
         command: gunicorn --bind 0.0.0.0:5000 app:app --reload
         ports:
             - "5000:5000"
-
+        # networks:
+        #    - app-tier
         volumes:
             - appdata:/var/www/
             - ./backend:/app
 
-
 volumes:
-    
     appdata:
+    
+# networks:
+#   default:
+#     external:
+#       name: gym

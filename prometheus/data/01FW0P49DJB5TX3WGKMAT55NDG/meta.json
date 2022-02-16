@@ -1,0 +1,17 @@
+{
+	"ulid": "01FW0P49DJB5TX3WGKMAT55NDG",
+	"minTime": 1644984000000,
+	"maxTime": 1644991200000,
+	"stats": {
+		"numSamples": 3466317,
+		"numSeries": 2982,
+		"numChunks": 27780
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01FW0P49DJB5TX3WGKMAT55NDG"
+		]
+	},
+	"version": 1
+}
