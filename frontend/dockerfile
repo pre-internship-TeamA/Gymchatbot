@@ -6,19 +6,31 @@ EXPOSE 3000
 EXPOSE 35729
 
 # Set working directory
+<<<<<<< Updated upstream
 WORKDIR /app
+=======
+WORKDIR /frontend
+COPY  . /frontend
+ENV REACT_APP_HOST_IP_ADDRESS $API_URL
+ENV REACT_APP_BACKEND_URL $REACT_APP_BACKEND_URL
+>>>>>>> Stashed changes
 
 # Add /app/node_modules/.bin to environment variables
-ENV PATH /app/node_modules/.bin:$PATH
+ENV PATH /frontend/node_modules/.bin:$PATH
 
+<<<<<<< Updated upstream
 # Copy package files and install app dependencies
 COPY package.json /app/package.json
 COPY package-lock.json /app/package-lock.json
+=======
+# Install all app dependencies
+COPY package.json /frontend/package.json
+>>>>>>> Stashed changes
 RUN npm install
-RUN npm install react-scripts -g
-RUN npm install axios
-RUN npm install react-router-dom
+COPY . ./
 
+
+<<<<<<< Updated upstream
 # Add React app to working directory
 ADD . /app
 
@@ -56,3 +68,7 @@ CMD ["npm", "start"]
 # EXPOSE 80
 
 # CMD ["nginx", "-g", "daemon off;"]
+=======
+# Build the app
+RUN npm run build
+>>>>>>> Stashed changes

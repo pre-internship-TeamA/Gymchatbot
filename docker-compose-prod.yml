@@ -6,13 +6,15 @@ services:
         build:
             context: ./frontend
             dockerfile: dockerfile
-        ports:
-            - "3000:80"
-        volumes: 
-            - ./frontend:/app
-            - /app/node_modules
-        networks:
-            - frontend
+            args:
+                API_URL: "*"
+        environment:
+            - REACT_APP_BACKEND_URL=http://localhost:5000
+        volumes:
+            - ./frontend/:/frontend
+            - build_folder:/frontend/build
+            - ./frontend/node_modules/:/frontend/node_modules
+        tty: true
 
     mongodb:
         image: mongo
@@ -42,19 +44,29 @@ services:
             MONGODB_PASSWORD: "apipassword"
         volumes:
             - appdata:/var/www/
+<<<<<<< Updated upstream
         depends_on: 
             - mongodb
         networks:
             - frontend
+=======
+            - ./backend:/app
+    nginx:
+        build: ./nginx
+        ports:
+            - 80:8080
+        volumes:
+            - build_folder:/var/www/frontend
+        depends_on:
+>>>>>>> Stashed changes
             - backend
+            - frontend
 
-networks:
-    frontend:
-        driver: bridge
-    backend:
-        driver: bridge
+
+
 volumes:
     mongodbdata:
         driver: local
     appdata:
         driver: local
+    build_folder:
