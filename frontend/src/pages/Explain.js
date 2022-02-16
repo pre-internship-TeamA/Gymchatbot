@@ -1,6 +1,9 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Pagination from '../components/Pagination';
 import Exercise from '../components/Exercise';
+
+
+
 
 function Explain(){
 
@@ -16,34 +19,22 @@ function Explain(){
         currentPosts = tmp.slice(indexOfFirst, indexOfLast);
         return currentPosts;
     }
-
+    // React Hook "useEffect" cannot be called inside a callback. React Hooks must be called in a React function component or a custom React Hook function  react-hooks/rules-of-hooks
     
     useEffect( ()=>{
         setExercise(
             [
                 {
                     name : "사이드레터럴레이즈",
-                    exercise : "어깨운동"
+                    exercise : "어깨운동",
                 },
                 {
                     name : "벤치프레스",
-                    exercise : "가슴운동"
+                    exercise : "가슴운동",
                 },
                 {
                     name : "풀업",
-                    exercise : "등운동"
-                },
-                {
-                    name : "사이드레터럴레이즈",
-                    exercise : "어깨운동"
-                },
-                {
-                    name : "벤치프레스",
-                    exercise : "가슴운동"
-                },
-                {
-                    name : "풀업",
-                    exercise : "등운동"
+                    exercise : "등운동",
                 }
 
             ]
@@ -58,4 +49,5 @@ function Explain(){
         </div>
     )
 }
+
 export default Explain;

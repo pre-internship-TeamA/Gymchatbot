@@ -1,5 +1,6 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import React from 'react'
+import axios from 'axios'
 import {
   BrowserRouter as Router,
   Route,
@@ -14,19 +15,7 @@ import Details from './pages/Details';
 import Explain from './pages/Explain';
 
 
-function App() {
-
-  // const [condition, setCondition] = useState(true)
-  // const getCondition = (text) => {
-  //   setCondition(text);
-  // }
-
-  // useEffect( ()=> {
-  //   console.log(condition)
-  // },[condition])
-
-  // const renderCondition = condition ? <Device></Device> : <Result></Result>
-
+  function App(){
   return (
     <BrowserRouter>
       <div className="App">
@@ -42,7 +31,6 @@ function App() {
               <Route path='/detail' element={<Details/>} />
               <Route path='/explain' element={<Explain/>} />
             </Routes>
-            {/* {renderCondition} */}
             </>
           </div>
         </div>
