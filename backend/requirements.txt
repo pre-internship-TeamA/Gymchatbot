@@ -5,4 +5,5 @@ requests
 beautifulsoup4
 prometheus-flask-exporter
 pymongo[srv]
+flask_cors
 

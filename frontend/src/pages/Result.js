@@ -20,13 +20,15 @@ function Result(){
         return currentPosts;
     }
 
-
+    // Access-Control-Allow-Origin : https://stage.coginsight.net/apis/esd/Gym_counseling/records
     const axios = require("axios")
     useEffect( () => {
-            const url = encodeURI("/apis/esd/Gym_counseling/records");
+
+            const url = encodeURI("/coginsight/apis/esd/Gym_counseling/records");
             const headers = {
             "coginsight-api-key" : `roebQelczjsdRVqwtKG6ezTZInQfBeUnrREDoy7dTrGbvwkYxJzgmVMMw6q7p83fjsCZ3cuIVbuwFcNoyhpjEQ==|pt0f0hklgSYGCL0dhmtpzF5ngvh3QPcVNDUhqGXJ1D0=` ,
-            "coginsight-domain-id" : `4f33c78d-678b-4f8d-a62c-54f54061139c`
+            "coginsight-domain-id" : `4f33c78d-678b-4f8d-a62c-54f54061139c`,
+            "Access-Control-Allow-Origin" : `*`
             } 
             axios.get(url,{headers}).then((response) =>{
                 setCounseling(response.data.result)

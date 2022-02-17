@@ -80,10 +80,10 @@ function Explain(){
             const url = encodeURI("http://localhost:5000/");
             axios.get(url).then((response) =>{
                 setExercise(response.data.result)
-                
+                console.log(response.data)            
             })
     }, [])
-    console.log(exercise)
+    
     if (!exercise) return null;
     return(
         <div className ="explain">
