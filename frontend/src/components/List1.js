@@ -34,7 +34,8 @@ const addurl = "images/add.png"
                                      weight : user.weight,
                                      purpose : user.purpose,
                                      course : user.course,
-                                     style : user.style
+                                     style : user.style,
+                                     money : user.money
                                  }}>
                                     <img src={addurl}></img>
                                 </Link>

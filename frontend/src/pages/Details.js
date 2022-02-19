@@ -17,10 +17,7 @@ function Details(){
                     <span>{data.state.name}</span> / <span>{data.state.age}</span> / <span>{data.state.gender}</span>
                     <p>{data.state.height} / {data.state.weight}</p>
                 </div>
-                
-                
-
-                <div><p>운동 목적 : {data.state.purpose}</p>주 {data.state.style}회</div>
+                <div><p>운동 목적 : {data.state.purpose}</p>{data.state.style}회 / 예상 가격 : {data.state.money}</div>
                 <div><p> 신청 코스 : {data.state.course}</p></div>
                 <div className='last_list'>
                     <Link to="/result">

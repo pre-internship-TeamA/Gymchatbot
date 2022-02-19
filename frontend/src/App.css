@@ -166,7 +166,6 @@
   box-sizing: border-box;
   background: #9DD1C8;
 }
-
 .list {
   padding: 5px 30px;
   font-family: "cute-font";
@@ -278,7 +277,16 @@ list-style: none;
   box-sizing: border-box;
   padding: 20px;
   margin: 5% 2% 0% 2%;
-  height: 300px;
+  height: 600px;
   border: 5px solid #E3FFFA;
   border-radius: 20px;
+  overflow: scroll
+}
+.sub {
+  font-size: 30px;
+  margin: 10%;
+}
+.det {
+  font-size: 15px;
+  margin: 10%;
 }

@@ -5,7 +5,8 @@ function Exercise(exercise){
         <>
             {exercise.exercise.map(exercise => (
                     <div className='exercise_box' key={exercise._name}>
-                        {exercise.name}/ {exercise.exercise}
+                        <p className='sub'>{exercise.sub}</p>
+                        <p className='det'>{exercise.detail}</p>
                     </div>
                 ))}
         </>

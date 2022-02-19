@@ -1,4 +1,3 @@
-import List from '../components/List'
 import List1 from '../components/List1';
 import { useState, useEffect } from 'react';
 import Pagination from '../components/Pagination';
