@@ -5,14 +5,6 @@ function Sidenav(props){
 
   const spourl = "http://www.spogym.co.kr/default/"
 
-  // function sendCondition_device() {
-  //   props.getCondition(true)
-  // }
-
-  // function sendCondition_result() {
-  //   props.getCondition(false)
-  // }
-
     return(
         <div className='side-nav'>
           <ul>

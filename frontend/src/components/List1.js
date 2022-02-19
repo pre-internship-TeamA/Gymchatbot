@@ -2,12 +2,6 @@ import {Link} from 'react-router-dom'
 
 function List1(counseling){
 
-//    useEffect(() => {
-//     axios.get('https://jsonplaceholder.typicode.com/users' )
-//     .then(response =>{
-//         console.log(response)
-//     })
-// },[] )
 console.log(counseling)
 
 const addurl = "images/add.png"

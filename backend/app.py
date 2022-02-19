@@ -49,6 +49,7 @@ def getpost():
             o.append({"_ID":str(ObjectId(i["_id"])),"sub":i["sub"],"detail":i["detail"]})
         return jsonify(o)
 
+#결과는 위와 동일
 @app.route('/gym')
 def ping_server():
     abc = db.gymtb.find()
