@@ -53,13 +53,17 @@
   ```
 ## Port
   |Name|Port|Description|
-  |:-------|:------|:--------------------------|
-  |Nginx|80|가벼움과 높은 성능을 목표로 하는 웹서버로 서버로서의 역할과 프록시로서의 역할을 수행|
-  |Frontend|3000|React를 사용하여 사용자 인터페이스를 제공하고 외부api와 Backend api를 받아 화면에 전달|
-  |Backend|5000|Flask를 사용하여 Frontend에 필요한 데이터를 크롤링하고 DB저장후 api방식으로 데이터 전달|
-  |CAdvisor|8080|사용중인 도커 컨테이너 리소스 사용량을 측정하여 데이터화|
-  |Prometheus|9090|CAdvisor, Node-Expoter의 데이터들을 수집하여 모니터링|
-  |Grafana|3002|Prometheus에서 받아온 데이터들을 시각화하여 대시보드를 제공|
-  |Node-Expoter|9100|CPU, 메모리 사용량 등 호스트 관련 데이터를 수집|
+  |-------|------|--------------------------|
+  |Nginx|80|
+  |Frontend|3000|
+  |Backend|5000|
+  |CAdvisor|8080|
+  |Prometheus|9090|
+  |Grafana|3002|
+  |Node-Expoter|9100|
   
+  
+  
+  <img src="https://img.shields.io/badge/react-{red}?logo={로고이름}&logoColor={green}"/>
+
  
