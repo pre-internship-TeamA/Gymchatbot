@@ -19,7 +19,8 @@
 >**운영자:** 사용자가 입력한 정보를 헬스장측에서 종합하여 받을 수 있게하여 고객이 원하는 바를 더 빠르게 파악한다. 상담시간을 감축하여 필요 인력, 소비 시간을 줄일 수 있다. (결과목록 사용)
 
 ## Tech Stack
-
+<img src="https://img.shields.io/badge/Python-black?style=flat&logo=Python&logoColor=3776AB"/>
+<img src="https://img.shields.io/badge/React-skyblue?style=flat&logo=React&logoColor=61DAFB"/>
 
 
 ## 시스템 구조
@@ -103,9 +104,3 @@
 > |김나은|김승진|유동관|한승철|
 > |:----:|:----:|:----:|:----:|
 > |UX/UI Design / Frontend|Frotend / Monitoring|Backend / AI Chatbot|Backend / Docker|
-  
-  
-  <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
-  <img src="https://img.shields.io/badge/Nginx-green?style=plastic&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Scss-green?style=flat&logo=Sass&logoColor=CC6699"/>
-  <img src="https://img.shields.io/badge/MongoDB-yellow?style=plastic&logo=appveyor&logoColor=blue"/>
