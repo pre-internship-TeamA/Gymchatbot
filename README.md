@@ -24,44 +24,15 @@
 >
 >
 ## Frontend
+### React
 >
->
->
->
->
-## UX/UI
->
->웹사이트에서 챗봇만 제공하기에는 화면이 너무 텅 비어보여서 어떻게하면 심심하지 않게 웹사이트에 구성 요소들을 채워넣을 수 있을지 고민. 전체적인 틀 작성.
->
->1. Figma를 사용한 웹 페이지, 챗봇 디자인
->2. 웹사이트에 사용되는 로고 편집 및 배경 이미지 탐색
->3. Coginsight 자체 기능을 이용한 챗봇 내부 UI 색 수정
->
->Frontend 개발 시 생기는 디자인 차이 조정 및 Figma 구현 외적 요소들 검진
->
->Font(Figma): Cutefont / 적용: KOTRA HOPE
->
-
-## React
->
->1. 챗봇 기능 : <iframe> 태그 안에 챗봇 url을 넣어 웹에서 챗봇 기능을 사용 가능하게 구현
->    
->
->   
->
->1. 결과 목록 : coginsight안의 DB(esd)데이터들을 가져오기 위해 api 호출 (axios 사용)
->    - api 호출시 header에 api-key 와 domain-id를 입력했는데 오류 발생
->        - mindwareworks QnA로 문제해결
->    - axios로 api 호출 시 vscode console 안에서는 데이터가 호출되는데 브라우저에서는
->    CORS 오류로 데이터 호출에 문제 발생
+> 1. 챗봇 기능 : <iframe> 태그 안에 챗봇 url을 넣어 웹에서 챗봇 기능을 사용 가능하게 구현
+> coginsight의 DB(esd)데이터들과 Backend의 데이터를 가져오기 위해 api 호출 (axios 사용)
+>    - api 호출시 header에 api-key 와 domain-id를 입력(외부 api 호출에 필요한 키)
+>    - axios로 api 호출 시 vscode console 안에서는 데이터가 호출되는데 브라우저에서는 CORS 오류로 데이터 호출에 문제 발생
 >        - CORS 오류 : 서로다른 출처간의 리소스 전달 할 때 발생
->        - 프록시 서버 우회로 문제 해결
+>        - nginx config 파일에서 add_header 
 >        
->
->
->
->1. 페이지네이션
->    - 결과 목록에 데이터를 호출하면 모든 데이터들이 리스트로 출력되어 글자가 밖으로 넘치는 현상이 발생하여 페이지네이션을 추가함으로써 해결
 >
 >
 ## Backend
@@ -69,3 +40,22 @@
 ## Monitering
 
 ## ChatBot
+  
+## Tech Stack
+  Frontend : Reack
+  Web Server : Nginx
+  WSGI : Gunicorn
+  Backend : Flask
+  DataBase : MongoDB
+  
+  
+  🧿 PORTS
+Name	Port	Description
+Nginx	80	가벼움과 높은 성능을 목표로 하는 웹서버로 서버로서의 역할과 프록시로서의 역할을 수행합니다.
+React(on Nginx)	80, 3000	학습 문제의 이미지를 업로드 방식으로 등록하면, 해당 문제의 문항내용, 보기, 선지를 분류하여 텍스트 및 이미지로 저장할 수 있는 UI를 제공합니다.
+Flask + Gunicorn	8000, 5000	QUIZRIX의 서버. 모든 행동의 중심에 위치하여 웹서버, Cloud Storage, DB 간의 소통을 담당합니다.
+Mongo DB	27017	Database
+Grafana	3001	cAdvisor, Prometheus, NodeExporter를 통해 전달받은 시간별 매트릭 데이터를 시각화하여 대시보드로 제공해줍니다.
+cAdvisor	8080	사용중인 도커 컨테이너의 리소스 사용량을 측정하여 시계열 매트릭 데이터화합니다.
+Prometheus	9090	cAdvisor, node exporter의 시계열 매트릭 데이터를 수집하여 시스템 모니터링 및 경고합니다.
+Node Exporter	9100	서버의 cpu, 메모리, 디스크, 네트워크 사용량등 호스트 관련 매트릭 데이터를 수집하여 api로 노출시킵니다.
