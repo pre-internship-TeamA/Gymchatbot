@@ -99,6 +99,10 @@
 >  http://localhost:9090
 >  ```
 
+## Team
+> |김나은|김승진|유동관|한승철|
+> |:----:|:----:|:----:|:----:|
+> |UX/UI Design / Frontend|Frotend / Monitoring|Backend / AI Chatbot|Backend / Docker|
   
   
   <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
