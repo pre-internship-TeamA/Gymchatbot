@@ -33,7 +33,7 @@
   DataBase : MongoDB
   Monitoring : CAdvisor, Prometheus, Grafana, Node-Expoter
   ```
-## Port
+## Ports
   >|Name|Port|Description|
   >|-------|------|--------------------------|
   >|Nginx|80|
@@ -46,10 +46,10 @@
  
   
 ## Github
-  Clone Repository
-  ```
-  git clone https://github.com/pre-internship-TeamA/Gymchatbot.git
-  ```
+> + Clone Repository
+>  ```
+>  git clone https://github.com/pre-internship-TeamA/Gymchatbot.git
+>  ```
  ## Docker
 >  + Docker-compose.yml 파일 실행(개발용)
 >  ```
