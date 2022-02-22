@@ -17,22 +17,25 @@
 >**고객:** 부담없이 사전에 챗봇을 통해 정보를 얻을 수 있다. (챗봇기능 사용)
 >
 >**운영자:** 사용자가 입력한 정보를 헬스장측에서 종합하여 받을 수 있게하여 고객이 원하는 바를 더 빠르게 파악한다. 상담시간을 감축하여 필요 인력, 소비 시간을 줄일 수 있다. (결과목록 사용)
->
+
+## Tech Stack
+
+
+
 ## 시스템 구조
 >
 >![Untitled Diagram-Page-1 drawio (2)](https://user-images.githubusercontent.com/89952669/155075098-a746735a-35e3-4a12-9a68-9bda4ab28092.png)
->
+> 
+>  ```
+>  Frontend : React
+>  Web Server : Nginx
+>  WSGI : Gunicorn
+>  Backend : Flask
+>  DataBase : MongoDB
+>  Monitoring : CAdvisor, Prometheus, Grafana, Node-Expoter
+>  ```
 >
  
-## Tech Stack
-  ```
-  Frontend : React
-  Web Server : Nginx
-  WSGI : Gunicorn
-  Backend : Flask
-  DataBase : MongoDB
-  Monitoring : CAdvisor, Prometheus, Grafana, Node-Expoter
-  ```
 ## Ports
 >  |Name|Port|Description|
 >  |:-------|:------|:--------------------------|
@@ -67,7 +70,7 @@
 >  ```
 
 ## Backend
-> CORS오류를 해결하기위해 Flask_CORS 추가
+> CORS오류를 해결하기위해 app.py에 from flask_cors import CORS 추가
 > + 맥os에서 정상작동 window에서 Json import error
 
 ## Nginx
