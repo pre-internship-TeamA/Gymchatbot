@@ -44,12 +44,21 @@
   
 ## Tech Stack
   ```
-  Frontend : Reack
+  Frontend : React
   Web Server : Nginx
   WSGI : Gunicorn
   Backend : Flask
   DataBase : MongoDB
   Monitoring : CAdvisor, Prometheus, Grafana, Node-Expoter
   ```
+## Port
+  |Name|Port|Description|
+  |Nginx|80|
+  |Frontend|3000|
+  |Backend|5000|
+  |CAdvisor|8080|
+  |Prometheus|9090|
+  |Grafana|3002|
+  |Node-Expoter|9100|
   
  
