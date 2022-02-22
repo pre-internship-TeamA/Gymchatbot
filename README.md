@@ -23,7 +23,25 @@
 >![Untitled Diagram-Page-1 drawio (2)](https://user-images.githubusercontent.com/89952669/155075098-a746735a-35e3-4a12-9a68-9bda4ab28092.png)
 >
 >
- 
+## Frontend
+### React
+>
+> 1. 챗봇 기능 : <iframe> 태그 안에 챗봇 url을 넣어 웹에서 챗봇 기능을 사용 가능하게 구현
+> coginsight의 DB(esd)데이터들과 Backend의 데이터를 가져오기 위해 api 호출 (axios 사용)
+>    - api 호출시 header에 api-key 와 domain-id를 입력(외부 api 호출에 필요한 키)
+>    - axios로 api 호출 시 vscode console 안에서는 데이터가 호출되는데 브라우저에서는 CORS 오류로 데이터 호출에 문제 발생
+>        - CORS 오류 : 서로다른 출처간의 리소스 전달 할 때 발생
+>        - nginx config 파일에서 add_header 
+>        
+>
+>
+## Backend
+
+## Monitering
+
+## ChatBot
+
+  
 ## Tech Stack
   ```
   Frontend : React
@@ -34,35 +52,20 @@
   Monitoring : CAdvisor, Prometheus, Grafana, Node-Expoter
   ```
 ## Port
-  >|Name|Port|Description|
-  >|-------|------|--------------------------|
-  >|Nginx|80|
-  >|Frontend|3000|
-  >|Backend|5000|
-  >|CAdvisor|8080|
-  >|Prometheus|9090|
-  >|Grafana|3002|
-  >|Node-Expoter|9100|
- 
+  |Name|Port|Description|
+  |-------|------|--------------------------|
+  |Nginx|80|
+  |Frontend|3000|
+  |Backend|5000|
+  |CAdvisor|8080|
+  |Prometheus|9090|
+  |Grafana|3002|
+  |Node-Expoter|9100|
   
-## Github
-  Clone Repository
-  ```
-  git clone https://github.com/pre-internship-TeamA/Gymchatbot.git
-  ```
-## Docker
-  Docker-compose.yml 파일 실행
-  ```
-  Docker-compose up --build
-  ```
-  Docker-compose-prod.yml 파일 실행
-  ```
-  Docker-compose -f Docker-compose-prod.yml up --build
-  ```
   
   
   <img src="https://img.shields.io/badge/react-{red}?logo={로고이름}&logoColor={green}"/>
-  <img src="https://img.shields.io/badge/Scss-green?style=flat&logo=Sass&logoColor=CC6699"/>
+  <img src="https://img.shields.io/badge/python3.7.6?style=flat&logo=Python&logoColor=3776AB"/>
 
 
 
