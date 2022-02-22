@@ -40,13 +40,15 @@
 ## Monitering
 
 ## ChatBot
+
   
 ## Tech Stack
+  ```
   Frontend : Reack
   Web Server : Nginx
   WSGI : Gunicorn
   Backend : Flask
   DataBase : MongoDB
-  
+  ```
   
  
