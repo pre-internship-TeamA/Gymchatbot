@@ -49,6 +49,7 @@
   WSGI : Gunicorn
   Backend : Flask
   DataBase : MongoDB
+  Monitoring : CAdvisor, Prometheus, Grafana, Node-Expoter
   ```
   
  
