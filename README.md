@@ -19,7 +19,10 @@
 >**운영자:** 사용자가 입력한 정보를 헬스장측에서 종합하여 받을 수 있게하여 고객이 원하는 바를 더 빠르게 파악한다. 상담시간을 감축하여 필요 인력, 소비 시간을 줄일 수 있다. (결과목록 사용)
 
 ## Tech Stack
-<img src="https://img.shields.io/badge/Python-black?style=for-the-badge&logo=Python&logoColor=3776AB"/> <img src="https://img.shields.io/badge/React-skyblue?style=for-the-badge&logo=React&logoColor=black"/> <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=NGINX&logoColor=black"/>
+<img src="https://img.shields.io/badge/Python-black?style=for-the-badge&logo=Python&logoColor=3776AB"/> <img src="https://img.shields.io/badge/React-skyblue?style=for-the-badge&logo=React&logoColor=black"/> <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=NGINX&logoColor=black"/> <img src="https://img.shields.io/badge/Gunicorn-499848?style=for-the-badge&logo=Gunicorn&logoColor=black"/> <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=Flask&logoColor=black"/> <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=black"/> <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=black"/> <img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=Grafana&logoColor=black"/>  <img src="https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=Prometheus&logoColor=black"/> <img src="https://img.shields.io/badge/Coginsight-00AC47?style=for-the-badge&logo=Google Chat&logoColor=black"/> 
+  
+  
+  
 
 
 
