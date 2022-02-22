@@ -51,51 +51,17 @@
   git clone https://github.com/pre-internship-TeamA/Gymchatbot.git
   ```
 ## Docker
->  +Docker-compose.yml 파일 실행(개발용)
->  ```
->  Docker-compose up --build
->  ```
->  +Docker-compose-prod.yml 파일 실행 (배포용)
->  ```
->  Docker-compose -f Docker-compose-prod.yml up --build
->  ```
-  
-## Frontend
->  +React 개발용 npm 버전으로 실행
->  ```
->  npm start
->  ```
-
-## Nginx
->  +Frontend
->  ```
->  http://localhost:80
->  ```
->  +Backend
->  ```
->  http://localhost:5000
->  ```
->  +Grafana
->  ```
->  http://localhost:3002
->  ```
->  + CAdvisor
->  ```
->  http://localhost:8080
->  ```
->  +Node-Expoter
->  ```
->  http://localhost:9100
->  ```
->  +Prometheus
->  ```
->  http://localhost:9090
->  ```
+  Docker-compose.yml 파일 실행
+  ```
+  Docker-compose up --build
+  ```
+  Docker-compose-prod.yml 파일 실행
+  ```
+  Docker-compose -f Docker-compose-prod.yml up --build
+  ```
   
   
-  <img src="https://img.shields.io/badge/react-{red}?logo={로고이름}&logoColor={green}"/>
+  <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"><img src="https://img.shields.io/badge/Nginx-green?style=plastic&logoColor=white"/>
   <img src="https://img.shields.io/badge/Scss-green?style=flat&logo=Sass&logoColor=CC6699"/>
 
-
-
- 
+  <img src="https://img.shields.io/badge/MongoDB-yellow?style=plastic&logo=appveyor&logoColor=blue"/>
