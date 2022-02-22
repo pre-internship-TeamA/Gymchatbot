@@ -66,6 +66,10 @@
 >  npm start
 >  ```
 
+## Backend
+> CORS오류를 해결하기위해 Flask_CORS 추가
+> + 맥os에서 정상작동 window에서 Json import error
+
 ## Nginx
 >  + Frontend
 >  ```
