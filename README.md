@@ -51,11 +51,11 @@
   git clone https://github.com/pre-internship-TeamA/Gymchatbot.git
   ```
 ## Docker
-  Docker-compose.yml 파일 실행
+ + Docker-compose.yml 파일 실행
   ```
   Docker-compose up --build
   ```
-  Docker-compose-prod.yml 파일 실행
+ + Docker-compose-prod.yml 파일 실행
   ```
   Docker-compose -f Docker-compose-prod.yml up --build
   ```
