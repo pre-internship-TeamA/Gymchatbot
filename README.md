@@ -65,5 +65,8 @@
   
   
   <img src="https://img.shields.io/badge/react-{red}?logo={로고이름}&logoColor={green}"/>
+  <img src="https://img.shields.io/badge/Scss-green?style=flat&logo=Sass&logoColor=CC6699"/>
+
+
 
  
