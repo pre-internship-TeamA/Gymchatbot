@@ -61,7 +61,7 @@
 >  ```
   
 ## Frontend
->  +React 개발용 npm 버전으로 실행
+>  + React 개발용 npm 버전으로 실행
 >  ```
 >  npm start
 >  ```
